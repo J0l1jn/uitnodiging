@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Hat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('parchment.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Royal Wedding', cursive;
+            color: #4b2e2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #houses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px 0;
+        }
+
+        .house {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .house h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .house p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        .house.gryffindor {
+            background: linear-gradient(135deg, #7f0909, #ff0000);
+        }
+
+        .house.slytherin {
+            background: linear-gradient(135deg, #0c6644, #1f9b57);
+        }
+
+        .house.ravenclaw {
+            background: linear-gradient(135deg, #0e1a40, #223a80);
+        }
+
+        .house.hufflepuff {
+            background: linear-gradient(135deg, #ffc500, #ffdd66);
+        }
+
+        #sorting-hat {
+            margin: 20px 0;
+        }
+
+        #sorting-link {
+            text-decoration: none;
+            background-color: #4b2e2e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        #sorting-link:hover {
+            background-color: #6e4c4c;
+            transform: scale(1.1);
+        }
+
+        /* Seal navigation (same as index) */
+        .seal-navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .seal-navigation .seal-btn {
+            width: 70px;
+            height: 70px;
+            background-size: cover; /* Ensure full seal image fits */
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .seal-navigation .seal-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Actual seal images */
+        #seal1 {
+            background-image: url('Seal.png');
+        }
+
+        #seal2 {
+            background-image: url('Sealsortinghat.png');
+        }
+
+        #seal3 {
+            background-image: url('Sealdresscode.png');
+        }
+
+        #seal4 {
+            background-image: url('Sealcadeautje.png');
+        }
+
+        .seal-back {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            background: url('Seal perkament') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Sorting Hat</h1>
+    <img id="sorting-hat" src="sortinghat.png" alt="Sorting Hat" style="max-width: 200px;">
+    <a id="sorting-link" href="https://www.harrypotter.com/news/discover-your-hogwarts-house-on-wizarding-world" target="_blank">Take the Sorting Quiz!</a>
+    <div id="houses-container">
+        <div class="house gryffindor">
+            <h2>Gryffindor</h2>
+            <p>Bravery, courage, and determination.</p>
+        </div>
+        <div class="house slytherin">
+            <h2>Slytherin</h2>
+            <p>Ambition, cunning, and resourcefulness.</p>
+        </div>
+        <div class="house ravenclaw">
+            <h2>Ravenclaw</h2>
+            <p>Intelligence, creativity, and wisdom.</p>
+        </div>
+        <div class="house hufflepuff">
+            <h2>Hufflepuff</h2>
+            <p>Loyalty, patience, and fair play.</p>
+        </div>
+    </div>
+
+    <!-- Seal Navigation -->
+    <div class="seal-navigation">
+        <a href="index.html">
+            <div class="seal-btn" id="seal1"></div>
+        </a>
+        <a href="sorting.html">
+            <div class="seal-btn" id="seal2"></div>
+        </a>
+        <a href="dresscode.html">
+            <div class="seal-btn" id="seal3"></div>
+        </a>
+        <a href="presents.html">
+            <div class="seal-btn" id="seal4"></div>
+        </a>
+    </div>
+
+    <div class="seal-back" onclick="window.location.href='index.html';"></div>
+</body>
+</html>

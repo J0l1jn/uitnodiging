@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Royal Wedding', cursive;
+            background: url('parchment.jpg') no-repeat center center fixed; /* Replace with a valid texture URL */
+            background-size: cover;
+            color: #4b2e2e;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #8b0000;
+        }
+
+        p {
+            font-size: 2.0rem;
+            line-height: 2;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px; /* Reduced gap between the seals */
+            flex-direction: row; /* Align the seals horizontally */
+            z-index: 2;
+        }
+
+        .sidebar a {
+            width: 80px; /* Adjust size of the seals */
+            height: 80px; /* Adjust size of the seals */
+            display: block;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .sidebar a.active {
+            border: 2px solid #8b0000;
+            box-shadow: 0 0 10px #8b0000;
+        }
+
+        .sidebar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Seal navigation (same as index and sorting pages) */
+        .seal-navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .seal-navigation .seal-btn {
+            width: 70px;
+            height: 70px;
+            background-size: cover; /* Ensure full seal image fits */
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .seal-navigation .seal-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Actual seal images */
+        #seal1 {
+            background-image: url('Seal.png');
+        }
+
+        #seal2 {
+            background-image: url('Sealsortinghat.png');
+        }
+
+        #seal3 {
+            background-image: url('Sealdresscode.png');
+        }
+
+        #seal4 {
+            background-image: url('Sealcadeautje.png');
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Dress Code</h1>
+    <p>Wizards and Witches should arrive in their finest robes.<br>
+    Nee grapje, ik zou het leuk vinden als je de kleur van je huis aan zou trekken.<br>
+    Maar als je je mooiste costuum uit de kast wil trekken mag dat natuurlijk ook!<br><br>
+    <strong>Toverstokken zijn helaas verboden.</strong> Ik wil namelijk graag dat iedereen met twee ogen weer naar huis kan!<br>
+
+
+
+    </p>
+
+
+    <!-- Seal Navigation (same as on other pages) -->
+    <div class="seal-navigation">
+        <a href="index.html">
+            <div class="seal-btn" id="seal1"></div>
+        </a>
+        <a href="sorting.html">
+            <div class="seal-btn" id="seal2"></div>
+        </a>
+        <a href="dresscode.html">
+            <div class="seal-btn" id="seal3"></div>
+        </a>
+        <a href="presents.html">
+            <div class="seal-btn" id="seal4"></div>
+        </a>
+    </div>
+</body>
+</html>

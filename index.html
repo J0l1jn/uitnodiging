@@ -3,135 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You're Invited!</title>
+    <title>Magical Invitation</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: 'Times New Roman', serif;
-        }
-
-        #envelope {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            background-color: #e0c097;
-            border: 2px solid #b08a55;
+            background: url('parchment.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Royal Wedding', cursive;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            transition: transform 0.5s ease;
+            flex-direction: column;
         }
 
-        #envelope:hover {
-            transform: scale(1.05);
-        }
-
-        #top-flap, #bottom-flap {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #e0c097;
-            transform-origin: top;
-            transition: transform 0.5s ease;
-        }
-
-        #top-flap {
-            top: 0;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            transform: rotateX(0);
-        }
-
-        #bottom-flap {
-            bottom: 0;
-            clip-path: polygon(50% 100%, 0% 0, 100% 0);
-            transform: rotateX(0);
-        }
-
-        #seal {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: #8b0000;
-            border-radius: 50%;
-            border: 3px solid #b22222;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        /* Envelope styles */
+        .envelope {
+            position: relative;
+            width: 250px;
+            height: 150px;
+            background: #b08a55;
+            border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            font-family: 'Georgia', serif;
             cursor: pointer;
-            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
         }
 
-        #invitation {
+        .envelope::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #d2a679;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .envelope::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #d2a679;
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        }
+
+        /* Seal on envelope */
+        .envelope .seal {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('Seal.png') no-repeat center center;
+            background-size: contain;
+            z-index: 10;
+        }
+
+        /* Invitation styles */
+        #invitation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('parchment.jpg') no-repeat center center;
+            background-size: cover;
+            color: #4b2e2e;
             padding: 20px;
-            border: 2px solid #b08a55;
-            border-radius: 8px;
-            display: none;
+            display: none; /* Hidden by default */
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        #invitation .content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: transparent; /* Make background transparent */
+            border-radius: 10px; /* Optional: tweak if needed */
         }
 
         #invitation h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-family: 'Royal Wedding', cursive;
+            font-size: 2.5rem;
             color: #8b0000;
+            margin-bottom: 20px;
         }
 
         #invitation p {
             font-size: 1.2rem;
-            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .envelope {
+                width: 200px;
+                height: 120px;
+            }
+
+            .envelope .seal {
+                width: 40px;
+                height: 40px;
+            }
+
+            #invitation .content {
+                padding: 15px;
+            }
+
+            #invitation h1 {
+                font-size: 2rem;
+            }
+
+            #invitation p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .envelope {
+                width: 180px;
+                height: 110px;
+            }
+
+            .envelope .seal {
+                width: 35px;
+                height: 35px;
+            }
+
+            #invitation h1 {
+                font-size: 1.8rem;
+            }
+
+            #invitation p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Seal navigation styles */
+        .seal-navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .seal-navigation .seal-btn {
+            width: 70px;
+            height: 70px;
+            background-size: cover; /* Use cover to ensure the entire seal image fits */
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .seal-navigation .seal-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Actual seal images */
+        #seal1 {
+            background-image: url('Seal.png');
+        }
+
+        #seal2 {
+            background-image: url('Sealsortinghat.png');
+        }
+
+        #seal3 {
+            background-image: url('Sealdresscode.png');
+        }
+
+        #seal4 {
+            background-image: url('Sealcadeautje.png');
         }
     </style>
 </head>
 <body>
-    <div id="envelope">
-        <div id="top-flap"></div>
-        <div id="seal">✨</div>
-        <div id="bottom-flap"></div>
+    <!-- Envelope -->
+    <div class="envelope" id="envelope">
+        <div class="seal" id="seal"></div>
     </div>
+
+    <!-- Invitation Content -->
     <div id="invitation">
-        <h1>You're Invited!</h1>
-        <p>
-            Dear Witch or Wizard,<br><br>
-            Join us for a magical celebration!<br>
-            <strong>Where:</strong> Hogwarts<br>
-            <strong>When:</strong> December 15th, 2024<br>
-            <strong>Time:</strong> 5:00 PM<br><br>
-            Bring your wands and wizarding spirit!
-        </p>
+        <div class="content">
+            <h1>You're Invited!</h1>
+            <p>
+                Dearest Witch or Wizard,<br><br>
+                You are cordially invited to a magical celebration in honor of a most special occasion.<br>
+                The death of Jolijn's teenage years.<br><br>
+
+                <strong>Location:</strong> Middenweg 79A3<br>
+                <strong>Date:</strong> Februari 1st, 2025<br>
+                <strong>Time:</strong> 20:00<br>
+                <strong>Last train to Arnhem:</strong> 00:30<br>
+                If you don't want to go home at this time please send an owl, to see if we can arrange something
+                <br><br>
+                We would love to see your finest robes.<br>
+                (Check out the dresscode page!)<br>
+                Awaiting your owl with anticipation,<br>
+                <strong>Headmaster Jolijn</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Seal Navigation -->
+    <div class="seal-navigation">
+        <a href="index.html">
+            <div class="seal-btn" id="seal1"></div>
+        </a>
+        <a href="sorting.html">
+            <div class="seal-btn" id="seal2"></div>
+        </a>
+        <a href="dresscode.html">
+            <div class="seal-btn" id="seal3"></div>
+        </a>
+        <a href="presents.html">
+            <div class="seal-btn" id="seal4"></div>
+        </a>
     </div>
 
     <script>
-        const seal = document.getElementById('seal');
-        const envelope = document.getElementById('envelope');
-        const invitation = document.getElementById('invitation');
-        const topFlap = document.getElementById('top-flap');
-        const bottomFlap = document.getElementById('bottom-flap');
-
-        seal.addEventListener('click', () => {
-            topFlap.style.transform = 'rotateX(-180deg)';
-            bottomFlap.style.transform = 'rotateX(180deg)';
-            setTimeout(() => {
-                envelope.style.display = 'none';
-                invitation.style.display = 'block';
-            }, 500);
+        // Show invitation when envelope is clicked
+        document.getElementById('envelope').addEventListener('click', function () {
+            document.getElementById('invitation').style.display = 'block';
+            document.getElementById('seal').style.display = 'none'; // Hide the seal on the envelope
+            document.getElementById('envelope').style.transform = 'scale(0.8)'; // Reduce size of envelope
         });
     </script>
 </body>

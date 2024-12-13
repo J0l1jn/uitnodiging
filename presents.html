@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('parchment.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Royal Wedding', cursive;
+            color: #4b2e2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #gift-table {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px; /* Add some space at the bottom */
+        }
+
+        #gift-table h2 {
+            font-size: 2rem;
+            color: #8b0000;
+            margin-bottom: 20px;
+        }
+
+        #gift-table ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #gift-table li {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: #4b2e2e;
+        }
+
+        #gift-table li a {
+            text-decoration: none;
+            color: #4b2e2e;
+            font-weight: bold;
+            border-bottom: 1px dashed #8b0000;
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+
+        #gift-table li a:hover {
+            color: #8b0000;
+            border-bottom-color: #4b2e2e;
+        }
+
+        .seal-navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .seal-navigation .seal-btn {
+            width: 70px;
+            height: 70px;
+            background-size: cover; /* Ensure full seal image fits */
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .seal-navigation .seal-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Actual seal images */
+        #seal1 {
+            background-image: url('Seal.png');
+        }
+
+        #seal2 {
+            background-image: url('Sealsortinghat.png');
+        }
+
+        #seal3 {
+            background-image: url('Sealdresscode.png');
+        }
+
+        #seal4 {
+            background-image: url('Sealcadeautje.png');
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cadeautjes???</h1>
+    <div id="gift-table">
+        <h2>Jullie weten natuurlijk allemaal dat ik niet zo van cadeautjes hou. Maar als je toch iets wil geven: </h2>
+        <p>
+            <br><br>Bijdrage om dit feestje te kunnen betalen. <br> (Ik zal als het bijna 1 feb is een tikkie sturen, zodat ik wat lekkers te drinken voor jullie kan halen!)<br>
+            <br>Zilveren sierraden, of vette gekleurde oorbellen (obvi) <br>
+            <br>Warme trui<br>
+            <br>En natuurlijk alles met glitters!<br>
+        </p>
+    </div>
+
+    <!-- Seal Navigation (same as on other pages) -->
+    <div class="seal-navigation">
+        <a href="index.html">
+            <div class="seal-btn" id="seal1"></div>
+        </a>
+        <a href="sorting.html">
+            <div class="seal-btn" id="seal2"></div>
+        </a>
+        <a href="dresscode.html">
+            <div class="seal-btn" id="seal3"></div>
+        </a>
+        <a href="presents.html">
+            <div class="seal-btn" id="seal4"></div>
+        </a>
+    </div>
+</body>
+</html>
